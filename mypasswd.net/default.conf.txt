@@ -4,19 +4,19 @@
 # Define the server IP and ports here.
 upstream vaultwarden-default {
   zone vaultwarden-default 64k;
-  server pass.pvxx.com:8080;
+  server mypasswd.net:8080;
   keepalive 2;
 }
 upstream vaultwarden-ws {
   zone vaultwarden-ws 64k;
-  server pass.pvxx.com:3013;
+  server mypasswd.net:3013;
   keepalive 2;
 }
 
 # Redirect HTTP to HTTPS
 server {
     listen 80;
-    server_name pass.pvxx.com;
+    server_name mypasswd.net;
     return 301 https://$host$request_uri;
 }
 
